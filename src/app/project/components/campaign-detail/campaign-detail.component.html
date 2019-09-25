@@ -1,0 +1,260 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title></title>
+  <base href="/">
+  <!-- Horizon CSS -->
+  <link href="https://www.principalcdn.com/css/horizon/v2/horizon.min.css" rel="stylesheet">
+  <!-- Application specific CSS -->
+
+  <!-- Optional favicon and apple/android homescreen icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.principalcdn.com/css/horizon/v2/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="https://www.principalcdn.com/css/horizon/v2/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+
+      <!-- <h2>{{mainCampaignDetail.campaignDetail.name}}</h2> -->
+      <br /><br />
+      <!-- <iframe width="680" height="400" [src]=trustedUrl frameborder="0" allowfullscreen></iframe> -->
+      <div class="embed-responsive embed-responsive-16by9">
+        <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
+        <iframe class="embed-responsive-item" [src]=trustedUrl></iframe>
+      </div>
+
+      <br /><br />
+      <div class="row">
+        <div class="col-lg-11">
+          <mat-tab-group>
+            <mat-tab label="Story">
+              <div class="callout bg-gray-lightest">
+                <div>
+                  <h3>{{mainCampaignDetail.campaignDetail.short_pitch}}</h3>
+                  <p>
+                    {{mainCampaignDetail.campaignDetail.description}}
+                  </p>
+                </div>
+                <div style="margin-top:20px; margin-bottom:20px">
+                  <h4 class="campainCategory" style="color: #0091da;">Team</h4>
+                </div>
+                <div style="display:flex">
+
+
+                  <div class="employee_v5" *ngFor="let person of mainCampaignDetail.campaignTeams; let i=index"
+                    style="flex-grow: 1">
+                    <span class="teamMemberName"> {{person.name}} </span>
+                    <div class="teamMemberRole">{{person.profile}}</div>
+                    <div class="networks">
+                      <a href={{person.email_id}}><i class="fa fa-linkedin" style="color: #0091da;"></i></a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Financials">
+              <!-- <div class="callout bg-gray-lightest"> -->
+              <div class="cpanel panel-default">
+
+                <img src="https://codejamimage.s3.ap-south-1.amazonaws.com/financials.PNG" alt="tout-icon"
+                  class="img-responsive">
+
+                <!-- <div *ngFor="let report of mainCampaignDetail.campaignFinancialReports">
+                 <p>Year : {{report.year}}</p>
+                <p>Amount : {{report.value}}</p>
+                <p>Report Valuation : {{report.report}}</p> 
+                <h4 *ngIf="report.report == 'Revenue'"> {{report.year}} <br></h4>
+                <p>{{report.report}} : {{report.value}}</p>
+                </div> -->
+              </div>
+            </mat-tab>
+
+
+            <!-- <mat-tab label="Team">
+              <div class="employee_v5" *ngFor="let person of mainCampaignDetail.campaignTeams;">
+                <span class="teamMemberName"> {{person.name}} </span>
+                <div class="teamMemberRole">{{person.profile}}</div>
+                <div class="networks">
+                    <a href={{person.email_id}}><i class="fa fa-envelope" style="color: gray"></i></a>
+                </div>
+              </div>
+            </mat-tab> -->
+            <mat-tab label="FAQs">
+              <div class="routerContentSection-content callout bg-gray-lightest">
+
+                <div class="faqSection-container">
+                  <h5 class="campainCategory" style="color: #0091da;">Frequently Asked Questions</h5>
+                  <div class="campaignFaq-container" *ngFor="let singleqa of mainCampaignDetail.campaignFandQs;">
+                    <div class="campaignFaq-question t-weight--medium t-body--sansSerif--lg">
+                      {{singleqa.question}}
+                    </div>
+                    <div class="campaignFaq-answer t-body--sansSerif--lg">
+                      {{singleqa.answer}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Principal's Assessment">
+              <div class="routerContentSection-content callout bg-gray-lightest">
+
+                <div class="faqSection-container">
+                  <h5 class="campainCategory" style="color: #0091da;">Assessed Parameters</h5>
+                  <div class="campaignFaq-container">
+                    <div class="campaignFaq-question t-body--sansSerif--lg">
+                      <ul>
+                        <li> Founders Value Systems</li>
+                        <li> Founders background</li>
+                        <li> Their passion</li>
+                        <li> Startups’ team</li>
+                        <li> Founders motivation and energy level</li>
+                        <li> Credibility of the founders and core team (Educational and Professional background)</li>
+                        <li> Uniqueness of solution</li>
+                        <li> Innovative (Patent would also be an indicator)</li>
+                        <li> Approach</li>
+                        <li> Technology differentiator</li>
+                        <li> Business differentiator</li>
+                        <li> USP</li>
+                        <li> Startup Business model</li>
+                        <li> Stability / Sustainability of startups</li>
+                        <li> Revenue stream and cost benefits</li>
+                        <li> Relevance to business</li>
+                        <li> Principal business strategy</li>
+                        <li> Fintech -> Theme alignment (Explore partnership opportunities with existing business)</li>
+                        <li> Existing customer base</li>
+                        <!-- <li>      Engagement with other corporates and investors (Yes Bank startup engagement which Deutsche bank acquired -> such possibilities to be kept in mind)</li> -->
+                        <li> Funding status</li>
+                        <li> Current valuation</li>
+                      </ul>
+                    </div>
+                    <i class="fa fa-file-pdf-o" style="font-size:30px;color:red;" aria-hidden="true"></i>
+                    <span>Complete Assessment Report.pdf</span>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="campaignLayout-topContent-right">
+        <div>
+          <br /> <br />
+          <div class="fundingColor basicsSection-statusLabel t-label--sm">
+            Startup
+          </div>
+          <div class="basicsSection-title widescreen t-h4--sansSerif">
+            {{mainCampaignDetail.campaignDetail.name}}
+          </div>
+          <div class="basicsSection-tagline widescreen t-body--sansSerif--lg">
+            {{mainCampaignDetail.campaignDetail.short_pitch}}
+          </div>
+
+          <div class="basicCampaignOwner">
+
+            <div class="columns is-gapless">
+              <div>
+                <span><i class="fa fa-bar-chart fa-3x" style="color:rgb(209, 203, 203)"></i></span>
+              </div>
+              <div class="column">
+                <div class="basicsCampaignOwner-details">
+                  <div>
+                    <span class="campainCategory"
+                      style="color:green">{{mainCampaignDetail.campaignDetail.category}}</span>
+                  </div>
+                  <div class="basicsCampaignOwner-details-trust t-body--sansSerif">
+                    <div class="basicsCampaignOwner-details-city">
+                      <span>{{mainCampaignDetail.campaignDetail.investors}} Investors | </span>
+                      <span>{{mainCampaignDetail.campaignDetail.number_of_fund}} Funds</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="fund-bar">
+            <div>
+              <div>
+                <div class="fundingDiscoverableCard-raisedContainer">
+                  <div>
+                    <span class="fundingDiscoverableCard-unitsRaisedNumber">
+                      $
+                      {{mainCampaignDetail.campaignDetail.capitalRaisedIndividually + mainCampaignDetail.campaignDetail.capitalRaisedInFunds}}
+                    </span>
+                    <span class="fundingDiscoverableCard-unitsRaisedText">
+                      USD raised
+                    </span>
+                  </div>
+                  <div class="fundingDiscoverableCard-unitsRaisedNumber">
+                    {{percentageInvested}}%
+                  </div>
+                </div>
+                <div class="campaignFundingBar campaignFundingBar--compact">
+                  <div
+                    class="campaignFundingBar-progress campaignFundingBar-progress--full campaignFundingBar-progress--progress"
+                    [style.width.%]="100 * (mainCampaignDetail.campaignDetail.capitalRaisedIndividually + mainCampaignDetail.campaignDetail.capitalRaisedInFunds)/mainCampaignDetail.campaignDetail.fund_required">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=fundingDiscoverableCard-footerBottom>
+              <div>
+                <div class="fundingDiscoverableCard-raisedContainer">
+                  <div>
+                    <span *ngIf="amountAlreadyInvested>0" class="fundingDiscoverableCard-unitsRaisedNumber">
+                      You have invested : $ {{amountAlreadyInvested}}
+                    </span>
+                  </div>
+                  <div class="fundingDiscoverableCard-unitsRaisedNumber">
+                    <i class="fa fa-clock-o"></i>
+                    <span class="fundingDiscoverableCard-timeLeft">
+                      {{daysLeft}} days left
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-inline" style="margin-top:30px">
+            <div *ngIf="getUserRole()==1">
+              <mat-card-actions>
+                <i class="fa fa-dollar"></i> &nbsp;&nbsp;
+                <input class="showOnlyLine" style="text-align: right;" size="8" [(ngModel)]="amount" /> &nbsp;&nbsp;
+                <button *ngIf="amountAlreadyInvested==0" type="button" class="btn btn-primary" mat-button
+                  (click)="addToCart()">Invest</button>
+                <button *ngIf="amountAlreadyInvested>0" type="button" class="btn btn-primary" mat-button
+                  (click)="addToCart()">Edit Investment</button>
+                &nbsp;&nbsp;
+                <!-- &nbsp;&nbsp;<input  class="form-control" size="15" [(ngModel)]="amount" /> 
+                    <i class="fa fa-dollar"></i> -->
+              </mat-card-actions>
+            </div>
+          </div>
+          <div class="form-inline">
+            <div *ngIf="getUserRole()==2">
+              <mat-card-actions>
+                <button type="button" class="btn btn-primary" mat-button>Edit Campaign</button>
+              </mat-card-actions>
+            </div>
+          </div>
+          <div *ngIf="!isLoggedIn()">
+            <mat-card-actions>
+              <button type="button" class="btn btn-primary" mat-button (click)="addToCart()">Invest</button>
+            </mat-card-actions>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

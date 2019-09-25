@@ -1,0 +1,40 @@
+
+
+<!-- {{currentOrders | json}} -->
+
+<h1 *ngIf="currentOrders.length==0"><label><a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Please Add Startups/Funds to Invest !!</a></label></h1>
+<div class="table-responsive" *ngIf="currentOrders.length > 0">
+    <table class="table mb-0" >
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quoted Return Percent</th>
+                <th>Current Investment amount</th>
+                <th>Declared Percentage</th>
+                <th>After Sell Investment Out</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let currentOrder of currentOrders;let i = index">
+                <td>
+                    {{i+1}}
+                </td>
+                
+                <td>
+                    <a *ngIf="currentOrder.invest_type=='I'" class="nav-link" [routerLink]="['/campaignlist' , currentOrder.item_id]" routerLinkActive="active">  {{currentOrder.item_name}}</a>
+                </td>
+                <td>  <input [(ngModel)]="currentOrder.amount" placeholder="currentOrder.amount"/></td>
+                <td>  <i class="fa fa-times" (click)="removeItem(currentOrder)"></i></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="currentOrders.length > 0">
+        <button mat-button (click)="checkOut()">Check Out</button>
+</div>
+

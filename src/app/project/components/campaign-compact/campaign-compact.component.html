@@ -1,0 +1,77 @@
+
+
+<div class="homepageLayout">
+        <div class="campaignCarousel">
+            <div class="campaignCarousel-carousel" style="margin-left: 0px;">
+                    <div>
+                        
+                            <div class="campaignCarousel-carouselCard">
+                                <div class="baseDiscoverableCard">
+                                    <a [routerLink]="['/campaignlist' , mainCampaign.campaignDetail.id]" routerLinkActive="active">
+
+                                        <div class="baseDiscoverableCard-image">
+                                            <img height=250px src="{{imageUrl}}"  
+                                                style="width:100%">
+                                        </div>
+                                         <div class="baseDiscoverableCard-content">
+                                                <div>
+                                                        <div class="baseDiscoverableCard-header">
+                                                            <div class="projectTypeHeader">
+                                                                <div class="projectTypeHeader-label projectTypeHeader-label--campaign">
+                                                                    Open
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="baseDiscoverableCard-contentTop">
+                                                            <div class="baseDiscoverableCard-title">
+                                                                    {{mainCampaign.campaignDetail.name}}
+                                                            </div>   
+                                                        </div>
+                                                        <div>
+                                                            <div class="baseDiscoverableCard-body">
+                                                               {{mainCampaign.campaignDetail.short_pitch}}
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <small class="baseDiscoverableCard-categoryLink">Fintech</small>
+                                                            <span style="float:right; color:green" *ngIf="amountAlreadyInvested>0">Invested</span>
+                                                            <div>
+                                                                <div>
+                                                                    <div class="fundingDiscoverableCard-raisedContainer">
+                                                                        <div>
+                                                                            <span class="fundingDiscoverableCard-unitsRaisedNumber">
+                                                                                $ {{mainCampaign.campaignDetail.capitalRaisedIndividually + mainCampaign.campaignDetail.capitalRaisedInFunds}}
+                                                                            </span>
+                                                                            <span class="fundingDiscoverableCard-unitsRaisedText">
+                                                                                USD raised
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="fundingDiscoverableCard-unitsRaisedNumber">
+                                                                                {{100 * (mainCampaign.campaignDetail.capitalRaisedIndividually + mainCampaign.campaignDetail.capitalRaisedInFunds)/mainCampaign.campaignDetail.fund_required | number : '1.2-2'}}%
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="campaignFundingBar campaignFundingBar--compact">
+                                                                            <div class="campaignFundingBar-progress campaignFundingBar-progress--full campaignFundingBar-progress--progress"  [style.width.%]="100 * (mainCampaign.campaignDetail.capitalRaisedIndividually + mainCampaign.campaignDetail.capitalRaisedInFunds)/mainCampaign.campaignDetail.fund_required>100?100:100 * (mainCampaign.campaignDetail.capitalRaisedIndividually + mainCampaign.campaignDetail.capitalRaisedInFunds)/mainCampaign.campaignDetail.fund_required">                                                        
+                                                                            </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="fundingDiscoverableCard-footerBottom">
+                                                                    <div>
+                                                                        <i class="fa fa-clock-o"></i>
+                                                                        <span class="fundingDiscoverableCard-timeLeft">
+                                                                                {{daysLeft}} days left
+                                                                        </span>
+                                                                        
+                                                                    </div>
+                                                            </div>
+                                                        </div>            
+                                                </div>        
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>            
+                    </div>
+            </div>
+        </div>
+</div>    

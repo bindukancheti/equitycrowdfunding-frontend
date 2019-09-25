@@ -1,0 +1,283 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-family: benton-sans,Helvetica,"Sans-serif";
+}
+
+
+.annual_report .numbers-block {
+    text-align: Center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px;
+    width: 225px;
+}
+ .flexbox-row-center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+.report-icons{
+    width: 61px;
+    height: 73px
+}
+
+.column.is-narrow {
+    flex: none;
+}
+.column {
+    margin: 0;
+    padding: 0 !important;
+    display: block;
+}
+
+.campaignLayout-topContent .campaignLayout-topContent-right {
+    width: 390px;
+    margin-left: 1.5rem;
+}
+
+div {
+    display: block;
+}
+
+.basicsSection-statusLabel.widescreen{
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+}
+
+.fundingColor {
+    color: #088366;
+}
+
+.t-label--sm {
+    font-size: 1.3rem;
+}
+
+
+.t-label--sm {
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.basicsSection-title.widescreen{
+    display: block;
+}
+
+.t-h4--sansSerif {
+    font-weight: 600;
+}
+
+.t-h4--sansSerif {
+    letter-spacing: 0;
+    line-height: 1.4;
+    font-size:2.5rem;
+}
+
+.basicsSection-title{
+    margin-top: 8px;
+}
+.basicsSection-tagline.widescreen {
+    display: block;
+    margin: .25rem 0 1rem;
+}
+.t-body--sansSerif--lg {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+.basicsCampaignOwner {
+    padding: 0 0 .75rem;
+}
+.columns.is-gapless {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    display: flex;
+}
+.basicsCampaignOwner-icon.column.is-narrow {
+    margin: auto;
+}
+
+.column.is-narrow {
+    flex: none;
+}
+
+.basicsCampaignOwner-details {
+    margin-left: 8px;
+    margin-top:0px;
+}
+
+.basicsCampaignOwner-details-trust {
+    margin-top: 0;
+}
+
+.t-body--sansSerif{
+    font-size: .875rem;
+    line-height: 1.5;
+}
+
+.t-body--sansSerif{
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+.basicsCampaignOwner-details-city{
+    display: inline;
+    font-size: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+.baseDiscoverableCard-categoryLink {
+    letter-spacing: 1px;
+    color: #6a6a6a;
+}
+
+.fundingDiscoverableCard-raisedContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.fundingDiscoverableCard-unitsRaisedNumber {
+    font-weight: 600;
+}
+
+.fundingDiscoverableCard-unitsRaisedText {
+    color: #6a6a6a;
+    font-size: 1.2rem;
+}
+
+.fundingDiscoverableCard-raisedPercentage{
+    color: #6a6a6a;
+    font-size: .90rem;
+}
+
+.campaignFundingBar.campaignFundingBar--compact {
+    height: 20px;
+}
+
+.campaignFundingBar{
+    position: relative;
+    height: 20px;
+    width: 100%;
+    border-radius: 5px;
+    background: #ddd;
+}
+
+.campaignFundingBar-progress.campaignFundingBar-progress--compact {
+    height: 20px;
+}
+
+.campaignFundingBar-progress {
+    position: absolute;
+    height: 20px;
+    background:#0091da;
+    border-radius: 5px 0 0 5px;
+}
+
+.campaignFundingBar-progress.campaignFundingBar-progress--full {
+    border-radius: 20px;
+}
+
+.fundingDiscoverableCard-footerBottom {
+    margin-top: .5rem;
+    color: #6a6a6a;
+}
+
+.fundingDiscoverableCard-timeLeft {
+    margin-left: .25rem;
+}
+
+.fund-bar{
+    margin-top: 1rem;
+}
+.routerContentSection-content {
+    margin-top: 2rem;
+}
+.faqSection-container {
+    padding-top: 8px;
+    padding-bottom: 24px;
+}
+.campaignFaq-container {
+    padding-top: 24px;
+}
+.t-weight--medium {
+    font-weight: 600;
+}
+
+.campaignFaq-question {
+    margin-bottom: 8px;
+}
+.campaignFaq-answer {
+    color: #6a6a6a;
+}
+
+.employee_v5 {
+    width: 200px;
+   
+    position: relative;
+    text-align: center;
+}
+
+.employee-content{
+    padding-top: 0px;
+}
+
+.teamMemberName{
+    font-size: 1.12em;
+    font-weight: bold;
+   
+    text-align: center;
+}
+
+.teamMemberRole{
+    font-size: .875em;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.networks{
+    margin-top: 1px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+  
+ul li:before {
+  content: '✓';
+}
+
+.showOnlyLine{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}    
+
+.campainCategory{
+    font-weight: bold;
+}

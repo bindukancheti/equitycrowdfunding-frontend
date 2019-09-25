@@ -1,0 +1,71 @@
+<div class="homepageLayout">
+    <div class="campaignCarousel">
+        <div class="campaignCarousel-carousel" style="margin-left: 0px;">
+                <div>
+                        <div class="campaignCarousel-carouselCard">
+                            <div class="baseDiscoverableCard">
+                                <a [routerLink]="['/buybacklist' , buybackDetails.mainCampaign.campaignDetail.id]" routerLinkActive="active">
+
+                                    <div class="baseDiscoverableCard-image">
+                                        <img height=300px src="{{imageUrl}}"  
+                                            style="width:100%">
+                                    </div>
+                                     <div class="baseDiscoverableCard-content">
+                                            <div>
+                                                    <div class="baseDiscoverableCard-header">
+                                                        <div class="projectTypeHeader">
+                                                            <div class="projectTypeHeader-label projectTypeHeader-label--campaign">
+                                                                Open
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="baseDiscoverableCard-contentTop">
+                                                        <div class="baseDiscoverableCard-title">
+                                                                {{buybackDetails.mainCampaign.campaignDetail.name}}
+                                                        </div>   
+                                                    </div>
+                                                    <div>
+                                                        <div class="baseDiscoverableCard-body">
+                                                           {{buybackDetails.mainCampaign.campaignDetail.short_pitch}}
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <small class="baseDiscoverableCard-categoryLink">Fintech</small>
+                                                        <div>
+                                                            <div>
+                                                                <div class="fundingDiscoverableCard-raisedContainer">
+                                                                    <div>
+                                                                        <span class="fundingDiscoverableCard-unitsRaisedNumber">
+                                                                           {{amountAlreadyInvested}}
+                                                                        </span>
+                                                                        <span class="fundingDiscoverableCard-unitsRaisedText">
+                                                                            USD Invested
+                                                                        </span>
+                                                                    </div>
+                                                                    <div>
+                                                                        <span class="fundingDiscoverableCard-unitsRaisedNumber">
+                                                                           {{amountReturn | number : '1.2-2'}}
+                                                                        </span>
+                                                                        <span class="fundingDiscoverableCard-unitsRaisedText">
+                                                                            USD Return
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fundingDiscoverableCard-footerBottom">
+                                                                <div>
+                                                                   
+                                                                    
+                                                                </div>
+                                                        </div>
+                                                    </div>            
+                                            </div>        
+                                    </div>
+                                </a>
+                            </div>
+                        </div>            
+                </div>
+        </div>
+    </div>
+</div>    

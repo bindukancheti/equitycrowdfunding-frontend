@@ -1,0 +1,183 @@
+
+
+<!-- {{currentOrders | json}} -->
+
+<div class="text-center">
+<h1 *ngIf="currentOrders.length==0 && currentSellOrders.length==0"><label><a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">
+  Your cart is empty! </a></label></h1></div>
+<div class="table-responsive" *ngIf="currentOrders.length > 0">
+    <table class="table mb-0" >
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Investment Type</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Current Invested Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let currentOrder of currentOrders;let i = index">
+                <td>
+                    {{i+1}}
+                </td>
+                <td>
+                    {{currentOrder.invest_type=='I'?'Startup':'Fund'}}
+                </td>
+                <td>
+                    <a *ngIf="currentOrder.invest_type=='I'" class="nav-link" [routerLink]="['/campaignlist' , currentOrder.item_id]" routerLinkActive="active">  {{currentOrder.item_name}}</a>
+                    <a *ngIf="currentOrder.invest_type=='F'" class="nav-link" [routerLink]="['/fundlist' , currentOrder.item_id]" routerLinkActive="active">  {{currentOrder.item_name}}</a> 
+                </td> 
+                
+                <td>  <input class="form-control" style="text-align: right;" [(ngModel)]="currentOrder.amount" placeholder="currentOrder.amount"/></td>
+                <th style="text-align: right;">  {{currentInvestmentAmountForOrder(currentOrder.invest_type,currentOrder.item_id)}}</th>
+                <td>  <i class="fa fa-times" (click)="removeItem(currentOrder)"></i></td>
+              
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<!--  -->
+<!--  -->
+
+
+<!-- {{currentOrders | json}} -->
+
+<!-- <h1 *ngIf="currentSellOrders.length==0"><label><a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Go to Sell</a></label></h1> -->
+<div class="table-responsive" *ngIf="currentSellOrders.length > 0">
+    <table class="table mb-0" >
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Name</th>
+                <th>Quoted Return Percent</th>
+                <th>Current Investment amount</th>
+                <th>Declared Percentage</th>
+                <th>After Sell Investment Out</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let currentOrder of currentSellOrders;let i = index">
+                <td>
+                    {{i+1}}
+                </td>
+                
+                <td>
+                    <a *ngIf="currentOrder.invest_type=='I'" class="nav-link" [routerLink]="['/buybacklist' , currentOrder.item_id]" routerLinkActive="active">  {{currentOrder.item_name}}</a>
+                </td>
+                <td>
+                        {{currentOrder.buyBackPercentage}}
+                </td>
+                <td>
+                        {{currentOrder.remainingAmount * currentOrder.buyBackPercentage/ (100 -currentOrder.declaredPercenatege )}}
+                </td>
+                <td>
+                        {{currentOrder.declaredPercenatege}}
+                </td>
+                <td>
+                        {{currentOrder.remainingAmount}}
+                </td>
+
+                <td>  </td>
+                <td>  <i class="fa fa-times" (click)="removeSellItem(currentOrder)"></i></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="(currentSellOrders.length > 0) || (currentOrders.length > 0)">
+        <button *ngIf="!conditionsAccepted" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#my-modal">
+                Confirm Investment <i class="fa fa-chevron-right"></i>
+        </button>
+</div>
+
+
+<!-- Button trigger modal -->
+   
+    
+  
+  <div *ngIf="(currentSellOrders.length > 0) || (currentOrders.length > 0)">
+        <button *ngIf="conditionsAccepted" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#my-modal-2">
+                Submit <i class="fa fa-chevron-right"></i>
+        </button> 
+        &nbsp;  <label class="text-success" *ngIf="conditionsAccepted">Terms and Conditions Accepted.</label>
+
+  </div>   
+   
+  
+      <!-- Modal -->
+      <div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="my-modal-label">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title" id="my-modal-label">Terms and Conditions</h2>
+            </div>
+            <div class="modal-body">
+                <h5>As you are relatively new to SAFE investments, we need to be sure you understand all of the risks around
+                    what you are getting into:</h5>
+                    <br>
+                    <label class="container">Very few Start-ups investments are success and return big profits to investors.
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <br>
+                      <label class="container">If the Start-ups you invest in fails, then will unlikely to get you investment back
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <br>
+                      <label class="container">The only available modes to sell you shares would Buyback, IPO Listing or Next round
+                        of funding series.
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <br>
+                      <label class="container">It’s better to spread your risk by investing in multiple Start - ups instead of
+                        investing in one
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                      <br>
+                      <label class="container">Principal will be medium to negotiate the terms with Start up and sale funds on my
+                        behalf.
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="acceptConditions()">Accept</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="my-modal-2" tabindex="-1" role="dialog" aria-labelledby="my-modal-label-2">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <br><br><h4 class="modal-title text-center" id="my-modal-label-2">Your investment is successfully saved.</h4>
+                </div>
+               
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="checkOut()">Ok</button>
+                </div>
+              </div>
+            </div>
+    </div>
+

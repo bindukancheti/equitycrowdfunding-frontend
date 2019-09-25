@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+/*ECF - Purvi Jain Changes*/
+.homepageLayout {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    max-width: 1280px;
+}
+
+.campaignCarousel {
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+}
+
+.campaignCarousel-header {
+    margin: 0;
+}
+
+.t-h4--serif {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.3;
+    font-family: ff-more-web-pro,Georgia,"Serif";
+}
+
+.campaignCarousel-carousel, .campaignCarousel-header{
+    display: flex;
+    align-items: baseline;
+}
+
+.campaignCarousel-header {
+    justify-content: space-between;
+}
+
+/*Purvi Jain*/
+.campaignCarousel-carouselCard {
+    /* width: 275px; */
+    margin-top: 3.5rem;
+    /* margin-right: 2.5rem; */
+}
+
+.baseDiscoverableCard {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 99%; /*Purvi Jain*/
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.16,.8,.45,1);
+    position: relative;
+    background-color: #fff;
+}
+
+.baseDiscoverableCard:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+.baseDiscoverableCard-content {
+    padding: 0 1rem 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.baseDiscoverableCard-image {
+    width: 100%;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.baseDiscoverableCard-header {
+    padding-top: .75rem;
+}
+
+.projectTypeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.projectTypeHeader-label.projectTypeHeader-label--campaign {
+    color: #088366;
+}
+
+.projectTypeHeader-label {
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+
+.baseDiscoverableCard-contentTop{
+    display: flex;
+    margin-top: .75rem;
+}
+
+.baseDiscoverableCard-title{
+    font-weight: 600;
+    font-size: 2.25rem;
+}
+
+.baseDiscoverableCard-body {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #6a6a6a;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
+.baseDiscoverableCard-categoryLink {
+    letter-spacing: 1px;
+    color: #6a6a6a;
+}
+
+.fundingDiscoverableCard-raisedContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fundingDiscoverableCard-unitsRaisedNumber {
+    font-weight: 600;
+}
+
+.fundingDiscoverableCard-unitsRaisedText {
+    color: #6a6a6a;
+    font-size: .75rem;
+}
+
+.fundingDiscoverableCard-raisedPercentage{
+    color: #6a6a6a;
+    font-size: .90rem;
+}
+
+.campaignFundingBar.campaignFundingBar--compact {
+    height: 7px;
+}
+
+.campaignFundingBar{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background: #ddd;
+}
+
+.campaignFundingBar-progress.campaignFundingBar-progress--compact {
+    height: 7px;
+}
+
+.campaignFundingBar-progress {
+    position: absolute;
+    height: 10px;
+    background: #34ca96;
+    border-radius: 5px 0 0 5px;
+}
+
+.campaignFundingBar-progress.campaignFundingBar-progress--full {
+    border-radius: 5px;
+}
+
+.fundingDiscoverableCard-footerBottom {
+    margin-top: .5rem;
+    color: #6a6a6a;
+}
+
+.fundingDiscoverableCard-timeLeft {
+    margin-left: .25rem;
+}
+
+
+/*ECF - Purvi Jain Changes*/
+.col-lg-4 {
+    padding-left: -15px !important;
+    padding-right: -15x !important;
+}

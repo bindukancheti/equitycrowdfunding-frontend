@@ -1,0 +1,74 @@
+<div class="homepageLayout">
+    <div class="campaignCarousel">
+        <div class="campaignCarousel-carousel" style="margin-left: 0px;">
+                <div>
+                        <div class="campaignCarousel-carouselCard">
+                            <div class="baseDiscoverableCard">
+                                <a [routerLink]="['/fundlist' , fundDetail.id]" routerLinkActive="active">
+
+                                    <div class="baseDiscoverableCard-image">
+                                        <img height=300px src="{{tempurl}}"
+                                            style="width:100%">
+                                    </div>
+                                     <div class="baseDiscoverableCard-content">
+                                            <div>
+                                                    <div class="baseDiscoverableCard-header">
+                                                        <div class="projectTypeHeader">
+                                                            <div class="projectTypeHeader-label projectTypeHeader-label--campaign">
+                                                                Open
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="baseDiscoverableCard-contentTop">
+                                                        <div class="baseDiscoverableCard-title">
+                                                                {{fundDetail.fund_name}}
+                                                        </div>   
+                                                    </div>
+                                                    <div>
+                                                        <div class="baseDiscoverableCard-body">
+                                                           {{fundDetail.short_description}}
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <small class="baseDiscoverableCard-categoryLink">Diversified</small>
+                                                        <span style="float:right; color:green" *ngIf="amountAlreadyInvested>0">Invested</span>
+                                                        <div>
+                                                            <div>
+                                                                <div class="fundingDiscoverableCard-raisedContainer">
+                                                                    <div>
+                                                                        <span class="fundingDiscoverableCard-unitsRaisedNumber">
+                                                                            $ {{fundDetail.capitalRaisedInThisFund}}
+                                                                        </span>
+                                                                        <span class="fundingDiscoverableCard-unitsRaisedText">
+                                                                            USD raised
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="fundingDiscoverableCard-unitsRaisedNumber">
+                                                                            
+                                                                    </div>
+                                                                </div>
+                                                                <div class="campaignFundingBar campaignFundingBar--compact">
+                                                                        <div class="campaignFundingBar-progress campaignFundingBar-progress--full campaignFundingBar-progress--progress" [style.width.%]="45">                                                        
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fundingDiscoverableCard-footerBottom">
+                                                                <div>
+                                                                    <i class="fa fa-clock-o"></i>
+                                                                    <span class="fundingDiscoverableCard-timeLeft">
+                                                                            {{daysLeft}} days left
+                                                                    </span>
+                                                                    
+                                                                </div>
+                                                        </div>
+                                                    </div>            
+                                            </div>        
+                                    </div>
+                                </a>
+                            </div>
+                        </div>            
+                </div>
+        </div>
+    </div>
+</div>    

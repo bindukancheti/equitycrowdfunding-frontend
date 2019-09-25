@@ -1,0 +1,20 @@
+
+<div class="container">
+        <div class="campaignCarousel-header t-h4--serif">
+          My Startups
+        </div>
+        <div *ngFor="let mainCampaignDetail of mainCampaignDetails; let i = index">
+          <div *ngIf="i % 3== 0" class="row">
+            <div class="col-lg-4" *ngIf="listSize  > i+0">
+              <app-campaign-compact [mainCampaign]="mainCampaignDetails[i]"></app-campaign-compact>
+              <!-- {{mainCampaignDetails[i].campaignDetail | json}} -->
+            </div>
+            <div class="col-lg-4" *ngIf="listSize  > i+1">
+              <app-campaign-compact [mainCampaign]="mainCampaignDetails[i+1]"></app-campaign-compact>
+            </div>
+            <div class="col-lg-4" *ngIf="listSize  > i+2">
+              <app-campaign-compact [mainCampaign]="mainCampaignDetails[i+2]"></app-campaign-compact>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,246 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <base href="/">
+    <!-- Horizon CSS -->
+    <link href="https://www.principalcdn.com/css/horizon/v2/horizon.min.css" rel="stylesheet">
+    <!-- Application specific CSS -->
+    
+    <!-- Optional favicon and apple/android homescreen icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.principalcdn.com/css/horizon/v2/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.principalcdn.com/css/horizon/v2/apple-touch-icon.png">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="row">
+
+        <h2>{{fundDetail.fund_name}}</h2>
+        <br /><br />
+        <iframe width="640" height="400" [src]=trustedUrl frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <br /><br />
+      <div class="row">
+        <div class="col-lg-11">
+          <mat-tab-group>
+            <mat-tab label="Fund Details">
+              <div class="callout bg-gray-lightest">
+                <h3>{{fundDetail.short_description}}</h3>
+                <p>
+                  {{fundDetail.long_description}}
+                </p>
+
+                <ul>
+                  <p>Name : {{fundDetail.fundPortfolioManager[0].name}}</p>
+                  <p>Profile : {{fundDetail.fundPortfolioManager[0].description}}</p>
+                </ul>
+
+              </div>
+            </mat-tab>
+
+            <mat-tab label="Campaigns">
+              <!-- <div *ngFor="let singlecampaignDetail of fundDetail.fundCampaignsList;">
+                <div class="row">
+                  <app-campaign-compact [mainCampaign]="singlecampaignDetail"></app-campaign-compact>
+                </div>
+              </div> -->
+              <div class="callout bg-gray-lightest">             
+                  <div class="panel-body">
+                    <div *ngFor="let singlecampaignDetail of fundDetail.fundCampaignsList; let i = index">
+                      <div *ngIf="i % 3== 0" class="row">
+                        <div class="col-lg-4" *ngIf="fundDetail.fundCampaignsList.length  > i">
+                          <app-campaign-compact [mainCampaign]="fundDetail.fundCampaignsList[i]"></app-campaign-compact>
+                        </div>
+                        <div class="col-lg-4" *ngIf="fundDetail.fundCampaignsList.length  > i+1">
+                          <app-campaign-compact [mainCampaign]="fundDetail.fundCampaignsList[i+1]"></app-campaign-compact>
+                        </div>
+                        <div class="col-lg-4" *ngIf="fundDetail.fundCampaignsList.length  > i+2">
+                          <app-campaign-compact [mainCampaign]="fundDetail.fundCampaignsList[i+2]"></app-campaign-compact>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+            </mat-tab>
+
+            <mat-tab label="Performance">
+              
+                <div class="routerContentSection-content callout bg-gray-lightest">
+
+                    <div class="faqSection-container">
+                      <h5 class="campainCategory" style="color: #0091da;">Assessed Parameters</h5>
+                      <div class="campaignFaq-container">
+                        <div class="campaignFaq-question t-body--sansSerif--lg">
+                          <ul>
+                            <li> Founders Value Systems</li>
+                            <li> Founders background</li>
+                            <li> Their passion</li>
+                            <li> Startups’ team</li>
+                            <li> Founders motivation and energy level</li>
+                            <li> Credibility of the founders and core team (Educational and Professional background)</li>
+                            <li> Uniqueness of solution</li>
+                            <li> Innovative (Patent would also be an indicator)</li>
+                            <li> Approach</li>
+                            <li> Technology differentiator</li>
+                            <li> Business differentiator</li>
+                            <li> USP</li>
+                            <li> Startup Business model</li>
+                            <li> Stability / Sustainability of startups</li>
+                            <li> Revenue stream and cost benefits</li>
+                            <li> Relevance to business</li>
+                            <li> Principal business strategy</li>
+                            <li> Fintech -> Theme alignment (Explore partnership opportunities with existing business)</li>
+                            <li> Existing customer base</li>
+                            <!-- <li>      Engagement with other corporates and investors (Yes Bank startup engagement which Deutsche bank acquired -> such possibilities to be kept in mind)</li> -->
+                            <li> Funding status</li>
+                            <li> Current valuation</li>
+                          </ul>
+                        </div>
+                        <i class="fa fa-file-pdf-o" style="font-size:30px;color:red;" aria-hidden="true"></i>
+                        <span>Complete Assessment Report.pdf</span>
+                      </div>
+                    </div>
+                  </div>
+
+            </mat-tab>
+            <mat-tab label="FAQs">
+
+
+                <div class="routerContentSection-content callout bg-gray-lightest">
+                  
+                    <div class="faqSection-container">
+                      <h5 class="campainCategory" style="color: #0091da;">Frequently Asked Questions</h5>
+                      <div class="campaignFaq-container" *ngFor="let qa of fundDetail.fundFandQs">
+                        <div class="campaignFaq-question t-weight--medium t-body--sansSerif--lg">
+                            {{qa.question}}
+                        </div>
+                        <div class="campaignFaq-answer t-body--sansSerif--lg">
+                            {{qa.answer}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+              <!-- <li *ngFor="let qa of fundDetail.fundFandQs">
+                <p>Question : {{qa.question}}</p>
+                <p>Answer : {{qa.answer}}</p>
+                <p>--------------------------</p>
+              </li> -->
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="campaignLayout-topContent-right">
+            <div>
+              <br/> <br/>
+              <div class="fundingColor basicsSection-statusLabel t-label--sm">
+                Fund
+              </div>
+              <div class="basicsSection-title widescreen t-h4--sansSerif">
+                  {{fundDetail.fund_name}}
+              </div>
+              <div class="basicsSection-tagline widescreen t-body--sansSerif--lg">
+                  {{fundDetail.short_description}}
+              </div>
+              
+              <div class="basicCampaignOwner">
+    
+                    <div class="columns is-gapless" style="margin-top:10px;margin-bottom: 10px">
+                      <div>
+                        <span><i class="fa fa-bar-chart fa-3x" style="color:rgb(209, 203, 203)"></i></span>
+                      </div>
+                      <div class="column"> 
+                          <div class="basicsCampaignOwner-details">
+                            <div>
+                            <span class="campainCategory" style="color:green">{{fundDetail.category}}</span>
+                            </div>
+                            <div class="basicsCampaignOwner-details-trust t-body--sansSerif">
+                              <div class="basicsCampaignOwner-details-city">
+                                <span>{{fundDetail.investors}} Investors | </span>  
+                                <span>{{numberOfCampaigns}} Campaigns</span>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+    
+                    </div>
+                
+              </div>
+              <div class="fund-bar">
+                  <div>
+                      <div>
+                          <div class="fundingDiscoverableCard-raisedContainer">
+                              <div>
+                                  <span class="fundingDiscoverableCard-unitsRaisedNumber">
+                                      $ {{fundDetail.capitalRaisedInThisFund}}
+                                  </span>
+                                  <span class="fundingDiscoverableCard-unitsRaisedText">
+                                      USD raised
+                                  </span>
+                              </div>
+                              <div class="fundingDiscoverableCard-unitsRaisedNumber">
+                                  {{percentageInvested}}%
+                              </div>
+                          </div>
+                          <div class="campaignFundingBar campaignFundingBar--compact">
+                                  <div class="campaignFundingBar-progress campaignFundingBar-progress--full campaignFundingBar-progress--progress" [style.width.%]="percentageInvested">                                                        
+                                  </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class=fundingDiscoverableCard-footerBottom>
+                      <div>
+                          <div class="fundingDiscoverableCard-raisedContainer">
+                              <div>
+                                  <span *ngIf="amountAlreadyInvested>0" class="fundingDiscoverableCard-unitsRaisedNumber">
+                                      You have invested : $ {{amountAlreadyInvested}}
+                                  </span>
+                              </div>
+                              <div class="fundingDiscoverableCard-unitsRaisedNumber">
+                                  <i class="fa fa-clock-o"></i>
+                                  <span class="fundingDiscoverableCard-timeLeft">
+                                      {{daysLeft}} days left
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+    
+              </div> 
+              <div class="form-inline" style="margin-top:30px">
+                  <div *ngIf="getUserRole()==1">
+                    <mat-card-actions>
+                        <i class="fa fa-dollar"></i> &nbsp;&nbsp; 
+                      <input style="text-align: right;"   class="showOnlyLine" size="8" [(ngModel)]="amount" />  &nbsp;&nbsp;
+                        <button *ngIf="amountAlreadyInvested==0" type="button" class="btn btn-primary" mat-button (click)="addToCart()">Invest</button>
+                        <button *ngIf="amountAlreadyInvested>0"  type="button" class="btn btn-primary" mat-button (click)="addToCart()">Edit Investment</button>
+                        &nbsp;&nbsp;
+                        
+                    </mat-card-actions>
+                  </div>
+                </div>
+                
+                <div *ngIf="!isLoggedIn()">
+                    <mat-card-actions>
+                      <button type="button" class="btn btn-primary"  mat-button (click)="addToCart()">Invest</button>
+                    </mat-card-actions>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>

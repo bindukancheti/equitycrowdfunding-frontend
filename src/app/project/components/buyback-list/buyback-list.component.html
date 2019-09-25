@@ -1,0 +1,28 @@
+<div *ngIf="isInvestorLoggedIn" class="container">
+  
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title"> BuyBacks</h2>
+        </div>
+        <div class="panel-body">
+            <div *ngFor="let singleBuyback of buybackList; let i = index">
+                <div *ngIf="i % 3== 0" class="row">
+                  <div class="col-lg-4" *ngIf="buybackList.length  > i+0">
+                    <app-buyback-compact [buybackDetails]="buybackList[0]"></app-buyback-compact>
+                  </div>
+                  <div class="col-lg-4" *ngIf="buybackList.length  > i+1">
+                    <app-buyback-compact [buybackDetails]="buybackList[1]"></app-buyback-compact>
+                  </div>
+                  <div class="col-lg-4" *ngIf="buybackList.length  > i+2">
+                    <app-buyback-compact [buybackDetails]="buybackList[2]"></app-buyback-compact>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+</div>
+
+<br><br>
+
+
+
